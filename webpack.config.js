@@ -1,25 +1,35 @@
-const prod = process.env.NODE_ENV === 'production';
-const path = require('path');
+const prod = process.env.NODE_ENV === 'production'
+const path = require('path')
 
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: prod ? 'production' : 'development',
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     path: path.join(__dirname, '/dist/'),
-    filename: 'main.js',
+    filename: 'main.js'
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: './src/index.html',
-    }),
+      template: './src/index.html'
+    })
   ],
   module: {
     rules: [
       {
+        test: /\.(ts|js)x?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/env', '@babel/preset-react']
+          }
+        }
+      },
+      {
         test: /\.s(a|c)ss?$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.(png|jpe?g|svg)$/,
@@ -28,18 +38,19 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'images/',
-            },
-          },
-        ],
-      },
-    ],
+              outputPath: 'images/'
+            }
+          }
+        ]
+      }
+    ]
   },
   devtool: prod ? undefined : 'source-map',
   resolve: {
     alias: {
       '@assets': path.resolve(__dirname, 'src/assets'),
-      '@style': path.resolve(__dirname, 'src/style'),
-    },
-  },
-};
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@style': path.resolve(__dirname, 'src/style')
+    }
+  }
+}
