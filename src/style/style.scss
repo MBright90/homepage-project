@@ -1,8 +1,8 @@
 $breakpoint-tablet: 500px;
 $breakpoint-desktop: 1000px;
 
-header {
-    background: linear-gradient(175deg, #10bdb4 60%, #fff 60%);
-    height: 500px;
-    width: 100vw;
+body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    min-width: 100vw;
 }
