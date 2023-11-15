@@ -5,7 +5,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: prod ? 'production' : 'development',
-  entry: './src/index.jsx',
+  entry: './src/index.tsx',
   output: {
     path: path.join(__dirname, '/dist/'),
     filename: 'main.js'
@@ -23,16 +23,26 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/env', '@babel/preset-react']
+            presets: ['@babel/env', '@babel/preset-react', '@babel/preset-typescript']
           }
         }
       },
       {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        resolve: {
+          extensions: ['.ts', '.tsx', '.js', '.json'],
+        },
+        use: 'ts-loader',
+      },
+      {
         test: /\.s(a|c)ss?$/,
+        exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.(png|jpe?g|svg)$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'file-loader',
