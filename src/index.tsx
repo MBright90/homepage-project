@@ -1,6 +1,4 @@
 /* eslint-disable import/no-unresolved */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React from 'react'
 import { createRoot } from 'react-dom/client'
 
 import '@style/style.scss'
