@@ -1,0 +1,8 @@
+{
+    "name": "projects-grid",
+    "version": "1.0.0",
+    "main": "ProjectsGrid.tsx",
+    "dependencies": {
+        "react": "^18.2.0"
+    }
+}
