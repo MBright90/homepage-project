@@ -1,34 +1,26 @@
 @import '~@style/_variables.scss';
 
 .headerContainer {
+    background: linear-gradient((165deg, #ff960f 60%, transparent 60%));
     display: flex;
     flex-direction: column;
     position: relative;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        background: linear-gradient((170deg, #ff960f 60%, transparent 60%));
+    }
 }
 
-.imageContainer {
+.headerImage {
     position: relative;
     margin: 5vw;
-
-    img {
-        box-shadow: 3px 3px 5px #000;
-        width: 90vw;
-    }
-
-    .backgroundSlant {
-        background: linear-gradient((165deg, #fdcd3b 60%, transparent 60%));
-        height: calc(120% + 10vw);
-        position: absolute;
-        top: -5vw;
-        left: -5vw;
-        width: 100vw;
-        z-index: -1;
-    }
+    box-shadow: 3px 3px 5px #000;
+    width: 90vw;
 
     @media screen and (min-width: $breakpoint-tablet) {
-        img {
-            width: 400px;
-        }
+        margin: 40px 2vw 2vw;
+        position: absolute;
+        width: 400px;
     }
 }
 
@@ -40,27 +32,32 @@
     position: absolute;
     top: 8vw;
     right: 10vw;
-    text-shadow: 3px 3px 5px #2a2a2a;
+    text-shadow: 3px 3px 5px #000;
 
     @media screen and (min-width: $breakpoint-tablet) {
         font-size: 72px;
-        text-shadow: 5px 5px 5px #2a2a2a;
-        left: calc(10vw + 250px);
+        text-shadow: 5px 5px 5px #000;
+        left: calc(10vw + 200px);
         right: 0;
+        top: 100px;
     }
 }
 
 .aboutMeContainer {
     background-color: transparent;
+    border-bottom: 2px solid #ff960f;
+
     color: #fff;
     font-family: 'montserrat';
     letter-spacing: 3px;
     line-height: 1.5em;
-    margin: 0 5vw;
+    margin: 5vw;
+    padding-bottom: 20px;
+    // z-index: 5 !important;
 
-    .text-position {
-        display: none;
-    }
+    // .text-position {
+    //     display: none;
+    // }
 
     .aboutMeTitle {
         font-weight: bold;
@@ -70,7 +67,16 @@
 
     @media screen and (min-width: $breakpoint-tablet) {
         background-color: #2a2a2a;
+        border: none;
         box-shadow: 3px 3px 5px #000;
-        padding: 5vw;
+        margin: 60px 5vw 5vw;
+        padding: 140px 5vw 5vw;
+
+        // .text-position {
+        //     background-color: red;
+        //     display: inline-block;
+        //     height: 100px;
+        //     width: 100px;
+        // }
     }
 }
