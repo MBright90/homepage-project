@@ -1,0 +1,8 @@
+{
+    "name": "project-card",
+    "version": "1.0.0",
+    "main": "ProjectCard.tsx",
+    "dependencies": {
+        "react": "^18.2.0"
+    }
+}
