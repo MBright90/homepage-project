@@ -1,10 +1,15 @@
 @import '~@style/_variables.scss';
 
 .headerContainer {
-    background: linear-gradient((165deg, #ff960f 60%, transparent 60%));
+    background: linear-gradient((165deg, #ff960f 100vw, transparent 20%));
     display: flex;
     flex-direction: column;
     position: relative;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        background: linear-gradient((165deg, #ff960f 60%, transparent 60%));
+        display: inline-block;
+    }
 
     @media screen and (min-width: $breakpoint-desktop) {
         background: linear-gradient((170deg, #ff960f 60%, transparent 60%));
@@ -12,14 +17,15 @@
 }
 
 .headerImage {
+    float: left;
     position: relative;
-    margin: 5vw;
     box-shadow: 3px 3px 5px #000;
+    margin-top: 3vw;
     width: 90vw;
 
     @media screen and (min-width: $breakpoint-tablet) {
-        margin: 40px 2vw 2vw;
-        position: absolute;
+        float: left;
+        margin: -30px 2vw 2vw;
         width: 400px;
     }
 }
@@ -33,6 +39,7 @@
     top: 8vw;
     right: 10vw;
     text-shadow: 3px 3px 5px #000;
+    z-index: 1;
 
     @media screen and (min-width: $breakpoint-tablet) {
         font-size: 72px;
@@ -44,20 +51,24 @@
 }
 
 .aboutMeContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        display: block;
+    }
+}
+
+.textContainer {
     background-color: transparent;
     border-bottom: 2px solid #ff960f;
-
     color: #fff;
     font-family: 'montserrat';
     letter-spacing: 3px;
     line-height: 1.5em;
     margin: 5vw;
     padding-bottom: 20px;
-    // z-index: 5 !important;
-
-    // .text-position {
-    //     display: none;
-    // }
 
     .aboutMeTitle {
         font-weight: bold;
@@ -71,12 +82,5 @@
         box-shadow: 3px 3px 5px #000;
         margin: 60px 5vw 5vw;
         padding: 140px 5vw 5vw;
-
-        // .text-position {
-        //     background-color: red;
-        //     display: inline-block;
-        //     height: 100px;
-        //     width: 100px;
-        // }
     }
 }
