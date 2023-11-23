@@ -1,9 +1,41 @@
 .cardContainer {
+    background-color: #2a2a2a;
     box-shadow: 3px 3px 5px #000;
+    display: flex;
+    flex-direction: column;
+    font-family: 'montserrat';
     height: 500px;
 }
 
-.cardImage {
+.cardImageContainer {
     background-color: red;
-    height: 200px;
+    height: 50%;
+    position: relative;
+    width: 100%;
+    .cardImage {
+        height: 200px;
+    }
+
+    .ProjectTitle {
+        background-color: rgba(0, 0, 0 ,0.8);
+        bottom: 0;
+        color: #ff960f;
+        left: 0;
+        padding: 10px 20px;
+        position: absolute;
+        right: 0;
+        text-align: right;
+    }
 }
+
+.cardTextContainer {
+    flex-grow: 1;
+    padding: 10px 20px;
+
+    .cardText {
+        color: #fff;
+        letter-spacing: 1.5px;
+        line-height: 1.7em;
+    }
+}
+
