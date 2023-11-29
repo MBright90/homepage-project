@@ -1,3 +1,51 @@
+@import '~@style/_variables';
+
 .footer {
-    background-color: red;
+    background-color: #ff960f;
+    color: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    font-family: 'montserrat';
+    letter-spacing: 1.5px;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
 }
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    
+    .footerTitle {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .contactDetail:not(:first-of-type) {
+        margin-top: 8px;
+    }
+
+    .contactIcon {
+        margin-right: 15px;
+    }
+}
+
+.iconContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    a {
+        text-decoration: none;
+
+        .iconLink {
+            color: #2a2a2a;
+            font-size: 32px;
+        }
+    }
+}
+
