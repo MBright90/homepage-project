@@ -28,14 +28,14 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <div className={style.iconContainer}>
-          <a href="www.twitter.com">
-            <i className={`devicon-twitter-original ${style.iconLink}`}></i>
-          </a>
           <a href="www.linkedIn.com">
             <i className={`devicon-linkedin-plain ${style.iconLink}`}></i>
           </a>
           <a href="www.github.com">
             <i className={`devicon-github-original ${style.iconLink}`}></i>
+          </a>
+          <a href="www.twitter.com">
+            <i className={`devicon-twitter-original ${style.iconLink}`}></i>
           </a>
         </div>
       </div>
