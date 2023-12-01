@@ -14,6 +14,10 @@
         grid-template-columns: 2fr 1fr;
         max-height: 500px;
     }
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .textContainer {
@@ -39,6 +43,20 @@
     .contactIcon {
         margin-right: 15px;
     }
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        .footerTitle {
+            font-size: 48px;
+        }
+
+        .contactDetail {
+            font-size: 24px;
+        }
+
+        .contactDetail:not(:first-of-type) {
+            margin-top: 15px;
+        }
+    }
 }
 
 .iconContainer {
@@ -58,8 +76,8 @@
 
 .imageContainer {
     max-height: 100%;
-    padding-bottom: -3px;
     img {
+        margin-left: auto;
         object-fit: none;
         object-position: top;
         width: 100%;
